@@ -48,14 +48,23 @@ public class HibernateUtility {
 
 	}
 	
-	public <T> List<T> get(Class<?> type, Serializable id,String columnName) {
+	public <T> List<T> get(Class<?> type, List<Serializable> valueList,List<String> columnNameList) {
 		
 		Session session=null;
 
 		try{
+
 			session=createSession();
-			Query query = session.createQuery("from "+type.getName()+" where "+ columnName +" = :"+columnName+" ");
-			query.setParameter(columnName, id);
+			StringBuilder queryBuilder=new StringBuilder();
+			queryBuilder.append("from "+type.getName()+" where ");
+			for(int i=0;i<columnNameList.size()-1;i++){
+				queryBuilder.append(columnNameList.get(i)+" = :"+columnNameList.get(i)+" and ");
+			}
+			queryBuilder.append(columnNameList.get(columnNameList.size()-1)+" = :"+columnNameList.get(columnNameList.size()-1));
+			Query query = session.createQuery(queryBuilder.toString());
+			for(int i=0;i<columnNameList.size();i++) {
+				query.setParameter(columnNameList.get(i),valueList.get(i));
+			}
 			List resultSet=query.list();
 			session.close();
 			return resultSet;
@@ -96,15 +105,23 @@ public <T> List<T> get(Class<? extends T> clazz) {
 		
 	}
 	
-	public void delete(Class<?> type, Serializable id) {
+	public void delete(Class<?> type, List<Serializable> valueList,List<String> columnNameList) {
 		
 		Session session=null;
 		
 		try{
 			session=createSession();
-			Query query = session.createQuery("delete "+type.getName()+" where id = :id");
-			query.setParameter("id",id);
-			
+			StringBuilder queryBuilder=new StringBuilder();
+			queryBuilder.append("delete "+type.getName()+" where ");
+			for(int i=0;i<columnNameList.size()-1;i++){
+				queryBuilder.append(columnNameList.get(i)+" = :"+columnNameList.get(i)+" and ");
+			}
+			queryBuilder.append(columnNameList.get(columnNameList.size()-1)+" = :"+columnNameList.get(columnNameList.size()-1));
+			Query query = session.createQuery(queryBuilder.toString());
+			for(int i=0;i<columnNameList.size();i++) {
+				query.setParameter(columnNameList.get(i),valueList.get(i));
+			}
+
 			int result = query.executeUpdate();
 			
 		}
