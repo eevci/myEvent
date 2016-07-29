@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -16,6 +17,7 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import main.java.models.EventMembership;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -59,6 +61,7 @@ public class EventRestService {
 				jo.accumulate("expiredate", event.getExpireDate());
 				jo.accumulate("description", event.getDescription());
 				jo.accumulate("place", event.getPlace());
+				jo.accumulate("admin", event.getAdminID());
 			}
 			return Response.ok(jo).header("Access-Control-Allow-Origin", "*")
 				.build();
@@ -86,6 +89,7 @@ public class EventRestService {
 				jo.accumulate("expiredate", event.getExpireDate());
 				jo.accumulate("description", event.getDescription());
 				jo.accumulate("place", event.getPlace());
+				jo.accumulate("admin", event.getAdminID());
 				
 				main.put(jo);
 			}
@@ -96,6 +100,84 @@ public class EventRestService {
 		}
 		return Response.serverError().build();
 	}
+
+	@GET
+	@Path("/get/{eventID}/members")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response listEventMembers(@PathParam("eventID") String eventID){
+		try {
+			JSONArray main = new JSONArray();
+			List <EventMembership> eventmemberships = service.getAllUsersOfEvent(eventID);
+			for(EventMembership em : eventmemberships){
+
+				JSONObject jo = new JSONObject();
+				jo.accumulate("membershipID", em.getMembershipID());
+				jo.accumulate("userID", em.getSender());
+				jo.accumulate("eventID", em.getEvent());
+				jo.accumulate("date", em.getDate());
+				main.put(jo);
+			}
+			return Response.ok(main).header("Access-Control-Allow-Origin", "*")
+					.build();
+		} catch (JSONException ex) {
+
+		}
+		return Response.serverError().build();
+	}
+
+	@GET
+	@Path("/get/{userID}/events-admin")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response listEventsOfAUserAsAdmin(@PathParam("userID") String userID){
+		try {
+			JSONArray main = new JSONArray();
+			List <Event> events = service.getCreatedEventsByUserId(userID);
+			for(Event event : events){
+
+				JSONObject jo = new JSONObject();
+				jo.accumulate("id", event.getId());
+				jo.accumulate("name", event.getName());
+				jo.accumulate("category", event.getCategory());
+				jo.accumulate("address", event.getAddress());
+				jo.accumulate("date", event.getDate());
+				jo.accumulate("expiredate", event.getExpireDate());
+				jo.accumulate("description", event.getDescription());
+				jo.accumulate("place", event.getPlace());
+				jo.accumulate("admin", event.getAdminID());
+
+				main.put(jo);
+			}
+			return Response.ok(main).header("Access-Control-Allow-Origin", "*")
+					.build();
+		} catch (JSONException ex) {
+
+		}
+		return Response.serverError().build();
+	}
+
+    @GET
+    @Path("/get/{userID}/events")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response listEventsOfAUserAsUser(@PathParam("userID") String userID){
+        try {
+            JSONArray main = new JSONArray();
+            List <EventMembership> eventmemberships = service.getJoinedEventsByUserId(userID);
+            for(EventMembership em : eventmemberships){
+
+                JSONObject jo = new JSONObject();
+                jo.accumulate("membershipID", em.getMembershipID());
+                jo.accumulate("userID", em.getSender());
+                jo.accumulate("eventID", em.getEvent());
+                jo.accumulate("date", em.getDate());
+                main.put(jo);
+            }
+            return Response.ok(main).header("Access-Control-Allow-Origin", "*")
+                    .build();
+        } catch (JSONException ex) {
+
+        }
+        return Response.serverError().build();
+    }
 	
 	@POST
 	@Path("/add")
@@ -106,12 +188,29 @@ public class EventRestService {
 		return Response.ok().header("Access-Control-Allow-Origin", "*")
 				.build();
 	}
+	@POST
+	@Path("/add/member/{eventID}/{userID}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response addUserToEvent(@PathParam("eventID") String eventID, @PathParam("userID") String userID ) {
+		service.addUserToEvent(userID,eventID, new SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()));
+		return Response.ok().header("Access-Control-Allow-Origin", "*")
+				.build();
+	}
 	
 	@DELETE
 	@Path("/delete/{id}")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response deleteEvent(@PathParam("id") String id) {
 		service.deleteEvent(id);
+		return Response.ok().header("Access-Control-Allow-Origin", "*")
+				.build();
+	}
+
+	@DELETE
+	@Path("/delete/member/{membershipID}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response addUserToEvent(@PathParam("membershipID") String membershipID ) {
+		service.quitFromAnEvent(membershipID);
 		return Response.ok().header("Access-Control-Allow-Origin", "*")
 				.build();
 	}

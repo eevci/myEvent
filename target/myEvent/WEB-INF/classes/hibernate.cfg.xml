@@ -15,6 +15,7 @@
    <mapping class="main.java.models.EventUser"></mapping>
    <mapping class="main.java.models.Event"></mapping>
    <mapping class="main.java.models.EventRequest"></mapping>
+       <mapping class="main.java.models.EventMembership"></mapping>
    <mapping class="main.java.models.Badge"></mapping>
    <mapping class="main.java.models.Like"></mapping>
    

@@ -4,12 +4,8 @@ package main.java.service;
 
 import java.util.List;
 
+import main.java.models.*;
 import org.json.*;
-
-import main.java.models.Event;
-import main.java.models.EventRequest;
-import main.java.models.EventUser;
-import main.java.models.Like;
 
 /**
 *
@@ -46,8 +42,9 @@ public interface Service {
 	
 	public void updateEvent(Event event);
 	
-	
-	
+	public void addUserToEvent(String userID, String eventID, String date);
+
+	public List<EventMembership> getAllUsersOfEvent(String eventID);
 	
 	public void likeAnEvent(Like like);
 	
@@ -59,15 +56,13 @@ public interface Service {
 	
 	public void cancelARequest(String id, String eventId);
 	
-	public void quitFromAnEvent(String id, String eventId);
+	public void quitFromAnEvent(String id);
 	
 
 	
 	public List<Event> getEventsByCategory(String category);
-
-	public List<Event> getEventsByEventId(String id);
 	
-	public List<Event> getJoinedEventsByUserId(String id);
+	public List<EventMembership> getJoinedEventsByUserId(String id);
 	
 	public List<Event> getCreatedEventsByUserId(String id);
 

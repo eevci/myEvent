@@ -2,22 +2,115 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d5dfc72-2c97-46cc-bfda-3f0279c48f88" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/myEvent/myEvent/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/myEvent/myEvent/pom.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/CompositePKEY/EventRequest_PKEY.class" afterPath="$PROJECT_DIR$/target/classes/main/java/CompositePKEY/EventRequest_PKEY.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/CompositePKEY/Like_PKEY.class" afterPath="$PROJECT_DIR$/target/classes/main/java/CompositePKEY/Like_PKEY.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/models/Badge.class" afterPath="$PROJECT_DIR$/target/classes/main/java/models/Badge.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/models/Event.class" afterPath="$PROJECT_DIR$/target/classes/main/java/models/Event.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/models/EventRequest.class" afterPath="$PROJECT_DIR$/target/classes/main/java/models/EventRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/models/EventUser.class" afterPath="$PROJECT_DIR$/target/classes/main/java/models/EventUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/models/Like.class" afterPath="$PROJECT_DIR$/target/classes/main/java/models/Like.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/rest/EventRestService.class" afterPath="$PROJECT_DIR$/target/classes/main/java/rest/EventRestService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/rest/RequestRestService.class" afterPath="$PROJECT_DIR$/target/classes/main/java/rest/RequestRestService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/rest/UserRestService.class" afterPath="$PROJECT_DIR$/target/classes/main/java/rest/UserRestService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/service/Service.class" afterPath="$PROJECT_DIR$/target/classes/main/java/service/Service.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/main/java/service/ServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/utility/HibernateUtility.class" afterPath="$PROJECT_DIR$/target/classes/main/utility/HibernateUtility.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent.war" afterPath="$PROJECT_DIR$/target/myEvent.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/CompositePKEY/EventRequest_PKEY.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/CompositePKEY/EventRequest_PKEY.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/CompositePKEY/Like_PKEY.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/CompositePKEY/Like_PKEY.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/Badge.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/Badge.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/Event.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/Event.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/EventRequest.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/EventRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/EventUser.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/EventUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/Like.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/Like.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/EventRestService.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/EventRestService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/RequestRestService.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/RequestRestService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/UserRestService.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/UserRestService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/Service.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/Service.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/ServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/HibernateUtility.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/HibernateUtility.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/antlr-2.7.7.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/antlr-2.7.7.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/asm-3.3.1.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/asm-3.3.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/classmate-1.3.0.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/classmate-1.3.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/commons-codec-1.9.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/commons-codec-1.9.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/dom4j-1.6.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/hibernate-core-5.1.0.Final.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/hibernate-core-5.1.0.Final.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jackson-core-asl-1.9.13.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jackson-core-asl-1.9.13.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jandex-2.0.0.Final.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/javassist-3.20.0-GA.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jersey-bundle-1.19.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jersey-bundle-1.19.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jersey-core-1.19.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jersey-core-1.19.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jersey-server-1.19.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jersey-server-1.19.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jettison-1.3.1.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jettison-1.3.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/json-20140107.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/json-20140107.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jsr311-api-1.1.1.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/jsr311-api-1.1.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/postgresql-9.4-1206-jdbc42.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/postgresql-9.4-1206-jdbc42.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/stax-api-1.0.1.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/stax-api-1.0.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/xml-apis-1.0.b2.jar" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/lib/xml-apis-1.0.b2.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/myEvent_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/myEvent_war.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/myEvent_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/myEvent_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_bundle_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_bundle_1_19.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_1_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_1_0_Final.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_0_Final.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1206_jdbc42.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1206_jdbc42.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_script.txt" afterPath="$PROJECT_DIR$/database_script.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myEvent.iml" afterPath="$PROJECT_DIR$/myEvent.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CompositePKEY/EventRequest_PKEY.java" afterPath="$PROJECT_DIR$/src/main/java/CompositePKEY/EventRequest_PKEY.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CompositePKEY/Like_PKEY.java" afterPath="$PROJECT_DIR$/src/main/java/CompositePKEY/Like_PKEY.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Badge.java" afterPath="$PROJECT_DIR$/src/main/java/models/Badge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Event.java" afterPath="$PROJECT_DIR$/src/main/java/models/Event.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/EventRequest.java" afterPath="$PROJECT_DIR$/src/main/java/models/EventRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/EventUser.java" afterPath="$PROJECT_DIR$/src/main/java/models/EventUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Like.java" afterPath="$PROJECT_DIR$/src/main/java/models/Like.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/EventRestService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/EventRestService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/RequestRestService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/RequestRestService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/UserRestService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/UserRestService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/Service.java" afterPath="$PROJECT_DIR$/src/main/java/service/Service.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/service/ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/utility/HibernateUtility.java" afterPath="$PROJECT_DIR$/src/main/utility/HibernateUtility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/index.jsp" afterPath="$PROJECT_DIR$/target/myEvent/index.jsp" />
     </list>
     <ignored path="myEvent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,46 +132,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/ServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1084">
-              <caret line="124" column="30" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="30" />
+            <state relative-caret-position="161">
+              <caret line="166" column="56" selection-start-line="166" selection-start-column="33" selection-end-line="166" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRestService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rest/UserRestService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="113" column="9" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HibernateUtility.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HibernateUtility.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/utility/HibernateUtility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
               <folding>
-                <marker date="1469791867955" expanded="true" signature="2073:2087" ph="select * fro... missingValue" />
-                <marker date="1469791867955" expanded="true" signature="3877:3925" ph="insert into adminuser... " />
-                <marker date="1469791867955" expanded="true" signature="4313:4358" ph="select * fro... adminuser" />
+                <marker date="1469801130620" expanded="true" signature="2073:2087" ph="select * fro... missingValue" />
+                <marker date="1469801130620" expanded="true" signature="3877:3925" ph="insert into adminuser... " />
+                <marker date="1469801130620" expanded="true" signature="4313:4358" ph="select * fro... adminuser" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestRestService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rest/RequestRestService.java">
+      <file leaf-file-name="EventRestService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rest/EventRestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="2367">
+              <caret line="221" column="35" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,34 +171,21 @@
       <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventRequest_PKEY.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CompositePKEY/EventRequest_PKEY.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Like_PKEY.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CompositePKEY/Like_PKEY.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            <state relative-caret-position="118">
+              <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,12 +200,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/rest/UserRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Like.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rest/EventRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/EventRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/RequestRestService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/Service.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/EventMembership.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/CompositePKEY/EventMembership_PKEY.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/ServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rest/EventRestService.java" />
         <option value="$PROJECT_DIR$/src/main/utility/HibernateUtility.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/Service.java" />
       </list>
     </option>
   </component>
@@ -155,6 +230,11 @@
       <MavenGeneralSettings>
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -295,6 +375,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -367,10 +451,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1105,20 +1185,20 @@
       <option name="presentableId" value="Default" />
       <updated>1469702671033</updated>
       <workItem from="1469702674263" duration="6027000" />
-      <workItem from="1469773612888" duration="14455000" />
+      <workItem from="1469773612888" duration="22997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20482000" />
+    <option name="totallyTimeSpent" value="29024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="24" width="1233" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1130,7 +1210,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24979724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24979724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1197,9 +1277,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1469791867955" expanded="true" signature="2073:2087" ph="select * fro... missingValue" />
-            <marker date="1469791867955" expanded="true" signature="3877:3925" ph="insert into adminuser... " />
-            <marker date="1469791867955" expanded="true" signature="4313:4358" ph="select * fro... adminuser" />
+            <marker date="1469801130620" expanded="true" signature="2073:2087" ph="select * fro... missingValue" />
+            <marker date="1469801130620" expanded="true" signature="3877:3925" ph="insert into adminuser... " />
+            <marker date="1469801130620" expanded="true" signature="4313:4358" ph="select * fro... adminuser" />
           </folding>
         </state>
       </provider>
@@ -1233,7 +1313,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
           <caret line="121" column="116" selection-start-line="121" selection-start-column="112" selection-end-line="121" selection-end-column="116" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1253,43 +1335,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Like.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/UserRestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="e#651#652#0" expanded="false" />
-            <element signature="e#678#679#0" expanded="false" />
-            <element signature="e#707#708#0" expanded="false" />
-            <element signature="e#733#734#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#805#806#0" expanded="false" />
-            <element signature="e#846#847#0" expanded="false" />
-            <element signature="e#873#874#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="12">
+          <caret line="113" column="9" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/EventRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        <state relative-caret-position="475">
+          <caret line="65" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/EventMembership.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Like.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#707#708#0" expanded="false" />
+            <element signature="e#733#734#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CompositePKEY/EventMembership_PKEY.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CompositePKEY/Like_PKEY.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        <state relative-caret-position="60">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/EventRestService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/RequestRestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+        <state relative-caret-position="-150">
+          <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -1302,47 +1413,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/UserRestService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="113" column="9" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+        <state relative-caret-position="161">
+          <caret line="166" column="56" selection-start-line="166" selection-start-column="33" selection-end-line="166" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/EventRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2367">
+          <caret line="221" column="35" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/utility/HibernateUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
           <folding>
-            <marker date="1469791867955" expanded="true" signature="2073:2087" ph="select * fro... missingValue" />
-            <marker date="1469791867955" expanded="true" signature="3877:3925" ph="insert into adminuser... " />
-            <marker date="1469791867955" expanded="true" signature="4313:4358" ph="select * fro... adminuser" />
+            <marker date="1469801130620" expanded="true" signature="2073:2087" ph="select * fro... missingValue" />
+            <marker date="1469801130620" expanded="true" signature="3877:3925" ph="insert into adminuser... " />
+            <marker date="1469801130620" expanded="true" signature="4313:4358" ph="select * fro... adminuser" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/RequestRestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/ServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1084">
-          <caret line="124" column="30" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>

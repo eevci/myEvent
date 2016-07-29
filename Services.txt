@@ -1,0 +1,25 @@
+(POST)addUser : http://localhost:8080/myEvent/webapi/user/add?ID=dominozor&name=enver&surname=evci&email=enverevci@gmail.com&password=passwordText&age=21&university=METU&scope=3&type=0
+(GET)getUser : http://localhost:8080/myEvent/webapi/user/get/dominozor
+(GET)listUser : http://localhost:8080/myEvent/webapi/user/get/
+(PUT)updateUser : http://localhost:8080/myEvent/webapi/user/update?ID=domi&name=enver&surname=evci&email=enverevci@gmail.com&password=hehe&age=21&university=METU&scope=3&type=0
+(DELETE)deleteUser : http://localhost:8080/myEvent/webapi/user/delete/domin
+
+(POST)addEvent : http://localhost:8080/myEvent/webapi/event/add?ID=event1&name=eventName&place=Ankara&category=Sports&description=descriptionText&address=addressText&online=true&admin=dominozor
+(GET)getEvent : http://localhost:8080/myEvent/webapi/event/get/event1
+(GET)getAllEventsOfUserAsADMIN : http://localhost:8080/myEvent/webapi/event/get/dominozor/events-admin
+(GET)getAllEventsOfUserAsUSER : http://localhost:8080/myEvent/webapi/event/get/dominozor/events
+(PUT)updateEvent : http://localhost:8080/myEvent/webapi/event/update?ID=event1&name=eventName&place=Ankara&category=Sports&description=descriptionText&address=addressText&online=true&admin=dominozor
+(DELETE)deleteEvent : http://localhost:8080/myEvent/webapi/event/delete/event1
+
+(POST)likeEvent : http://localhost:8080/myEvent/webapi/event/like/event1/dominozor
+(GET)getLikersOfEvent : http://localhost:8080/myEvent/webapi/event/like/event1
+(DELETE)deleteLike : http://localhost:8080/myEvent/webapi/event/like/delete/event1
+
+(POST)addRequest : http://localhost:8080/myEvent/webapi/request/add/dominozor/event1/22-02-2016
+(POST)answerRequest : http://localhost:8080/myEvent/webapi/request/answer/dominozor/event1/0 //0:rejected , 1:accepted
+(GET)getRequestsOfEvent : http://localhost:8080/myEvent/webapi/request/get/event1
+(GET)getRequestsOfUser : http://localhost:8080/myEvent/webapi/request/getreq/dominozor
+(DELETE)cancelRequest : http://localhost:8080/myEvent/webapi/request/delete/dominozor/event1
+
+(POST)addMemberToEvent : http://localhost:8080/myEvent/webapi/event/add/member/event1/dominozor
+(GET)listMembersOfEvent : http://localhost:8080/myEvent/webapi/event/get/event1/members

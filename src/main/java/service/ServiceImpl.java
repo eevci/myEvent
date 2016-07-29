@@ -1,14 +1,14 @@
 package main.java.service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
+import main.java.models.*;
 import org.json.JSONObject;
 
-import main.java.models.Event;
-import main.java.models.EventRequest;
-import main.java.models.EventUser;
-import main.java.models.Like;
 import main.utility.HibernateUtility;
 
 /**
@@ -69,6 +69,7 @@ public class ServiceImpl implements Service{
 	
 	public void createEvent(Event event){
 		hibernateUtility.save(event);
+        addUserToEvent( event.getAdminID(),  event.getId(),  new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
 	}
 	public Event getEvent(String id){
         List columnNameList=new ArrayList<String>();
@@ -92,8 +93,19 @@ public class ServiceImpl implements Service{
 	public void updateEvent(Event event){
 		hibernateUtility.update(event);
 	}
-	
-	
+
+    public void addUserToEvent(String userID, String eventID, String date){
+        hibernateUtility.save(new EventMembership(userID,eventID,UUID.randomUUID().toString(),date));
+    }
+
+    public List<EventMembership> getAllUsersOfEvent(String eventID){
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("eventID");
+        valueList.add(eventID);
+
+        return hibernateUtility.get(EventMembership.class,valueList,columnNameList);
+    }
 	
 	
 	public void likeAnEvent(Like like){
@@ -113,10 +125,11 @@ public class ServiceImpl implements Service{
 	public void joinRequestToAnEvent(EventRequest request) { hibernateUtility.save(request); }
 	public void answerARequest(String id, String eventId, boolean answer) {
 		if(answer==true){
-			System.out.println("Answer is true");
+			System.out.println("User joined to the event : "+eventId);
+            addUserToEvent(id,eventId, new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
 		}
 		else{
-			System.out.println("Answer is false");
+			System.out.println("Rejected");
 			cancelARequest(id,eventId);
 		}
 
@@ -132,31 +145,42 @@ public class ServiceImpl implements Service{
         valueList.add(eventId);
 	    hibernateUtility.delete(EventRequest.class, valueList,columnNameList);
 	}
-	@Override
-	public void quitFromAnEvent(String id, String eventId) {
-		// TODO Auto-generated method stub
+
+	public void quitFromAnEvent(String id) {
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("membershipID");
+
+        valueList.add(id);
+        hibernateUtility.delete(EventMembership.class, valueList,columnNameList);
 
 	}
-
-	@Override
 	public List<Event> getEventsByCategory(String category) {
-		// TODO Auto-generated method stub
-		return null;
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("category");
+
+        valueList.add(category);
+
+        return hibernateUtility.get(Event.class,valueList,columnNameList);
 	}
-	@Override
-	public List<Event> getEventsByEventId(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<EventMembership> getJoinedEventsByUserId(String senderID) {
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("senderID");
+
+        valueList.add(senderID);
+
+        return hibernateUtility.get(EventMembership.class,valueList,columnNameList);
 	}
-	@Override
-	public List<Event> getJoinedEventsByUserId(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<Event> getCreatedEventsByUserId(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Event> getCreatedEventsByUserId(String adminID) {
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("adminID");
+
+        valueList.add(adminID);
+
+        return hibernateUtility.get(Event.class,valueList,columnNameList);
 	}
 
 
