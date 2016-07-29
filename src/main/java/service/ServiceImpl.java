@@ -1,5 +1,6 @@
 package main.java.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONObject;
@@ -38,7 +39,11 @@ public class ServiceImpl implements Service{
 		hibernateUtility.addAdmin(id);
 	}
 	public EventUser getPerson(String id){
-		return (EventUser) hibernateUtility.get(EventUser.class, id,"id").get(0);
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("id");
+        valueList.add(id);
+		return (EventUser) hibernateUtility.get(EventUser.class, valueList,columnNameList).get(0);
 	}
 	public boolean checkAdmin(String id){
 		return hibernateUtility.checkAdmin(id);	
@@ -47,7 +52,11 @@ public class ServiceImpl implements Service{
 		return hibernateUtility.get(EventUser.class);
 	}
 	public void deletePerson(String id){
-		hibernateUtility.delete(EventUser.class, id);
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("id");
+        valueList.add(id);
+		hibernateUtility.delete(EventUser.class, valueList,columnNameList);
 	}
 	
 	public void updatePerson(EventUser person){
@@ -62,13 +71,23 @@ public class ServiceImpl implements Service{
 		hibernateUtility.save(event);
 	}
 	public Event getEvent(String id){
-		return (Event) hibernateUtility.get(Event.class, id,"id").get(0);
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("id");
+        valueList.add(id);
+	    return (Event) hibernateUtility.get(Event.class, valueList,columnNameList).get(0);
 	}
 	public List<Event> getAllEvents(){
 		return hibernateUtility.get(Event.class);
 	}
 	public void deleteEvent(String id){
-		hibernateUtility.delete(Event.class, id);
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("id");
+
+        valueList.add(id);
+
+	    hibernateUtility.delete(Event.class, valueList,columnNameList);
 	}
 	public void updateEvent(Event event){
 		hibernateUtility.update(event);
@@ -80,48 +99,45 @@ public class ServiceImpl implements Service{
 	public void likeAnEvent(Like like){
 		hibernateUtility.save(like);
 	}
-	public boolean joinRequestToAnEvent(String id){
-		return false;
+
+	public List<Like> getLikersOfEvent(String eventID) {
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("eventID");
+
+        valueList.add(eventID);
+
+		return hibernateUtility.get(Like.class,valueList,columnNameList);
 	}
-	
-	@Override
-	public boolean joinRequestToAnEvent(String id, String eventId) {
-		// TODO Auto-generated method stub
-		return false;
+
+	public void joinRequestToAnEvent(EventRequest request) { hibernateUtility.save(request); }
+	public void answerARequest(String id, String eventId, boolean answer) {
+		if(answer==true){
+			System.out.println("Answer is true");
+		}
+		else{
+			System.out.println("Answer is false");
+			cancelARequest(id,eventId);
+		}
+
 	}
-	@Override
-	public boolean answerARequest(String id, String eventId, boolean answer) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
+
 	public void cancelARequest(String id, String eventId) {
-		// TODO Auto-generated method stub
-		
+	    List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("senderID");
+        columnNameList.add("eventID");
+
+        valueList.add(id);
+        valueList.add(eventId);
+	    hibernateUtility.delete(EventRequest.class, valueList,columnNameList);
 	}
 	@Override
-	public boolean quitFromAnEvent(String id, String eventId) {
+	public void quitFromAnEvent(String id, String eventId) {
 		// TODO Auto-generated method stub
-		return false;
+
 	}
-	
-	
-	
-	
-	@Override
-	public List<EventRequest> getRequestsByUserId(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
-	
-	@Override
-	public List<Event> getEvents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	@Override
 	public List<Event> getEventsByCategory(String category) {
 		// TODO Auto-generated method stub
@@ -144,26 +160,26 @@ public class ServiceImpl implements Service{
 	}
 
 
-
-	@Override
 	public List<EventRequest> getRequestByUserID(String id) {
-		// TODO Auto-generated method stub
-		return null;
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("senderID");
+
+        valueList.add(id);
+		return hibernateUtility.get(EventRequest.class, valueList,columnNameList);
 	}
 
-
-
-	@Override
 	public List<EventRequest> getRequestByEventID(String id) {
-		// TODO Auto-generated method stub
-		return null;
+        List columnNameList=new ArrayList<String>();
+        List valueList=new ArrayList<String>();
+        columnNameList.add("eventID");
+
+        valueList.add(id);
+		return hibernateUtility.get(EventRequest.class, valueList,columnNameList);
 	}
 
 
 
-	@Override
-	public List<Like> getLikersOfEvent(String eventID) {
-		return hibernateUtility.get(Like.class,eventID,"eventID");
-	}
+
 	
 }

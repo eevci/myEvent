@@ -56,15 +56,16 @@ public class RequestRestService {
 				jo.accumulate("senderID", req.getSender());
 				jo.accumulate("eventID", req.getEvent());
 				jo.accumulate("message", req.getMessage());
-				
+				jo.accumulate("date", req.getDate());
+
 				main.put(jo);
 			}
 			return Response.ok(main).header("Access-Control-Allow-Origin", "*")
 				.build();
 		} catch (JSONException ex) {
-			
+			return Response.serverError().build();
 		}
-		return Response.serverError().build();
+
 	}
 	
 	@GET
@@ -81,42 +82,61 @@ public class RequestRestService {
 				jo.accumulate("senderID", req.getSender());
 				jo.accumulate("eventID", req.getEvent());
 				jo.accumulate("message", req.getMessage());
+				jo.accumulate("date", req.getDate());
 				
 				main.put(jo);
 			}
 			return Response.ok(main).header("Access-Control-Allow-Origin", "*")
 				.build();
 		} catch (JSONException ex) {
-			
+			return Response.serverError().build();
 		}
-		return Response.serverError().build();
+
 	}
 	
 	
 	@POST
-	@Path("/add")
+	@Path("/add/{senderID}/{eventID}/{date}")
+	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String createEvent(@QueryParam("ID") String id,@QueryParam("name")String name, @QueryParam("date") Date date,@QueryParam("expireDate") Date expireDate,@QueryParam("place") String place,@QueryParam("category") String category,@QueryParam("description") String description,@QueryParam("address") String address, @QueryParam("online") boolean online,@QueryParam("admin") String adminID) {
-		Event event=new Event(id, name, date, expireDate, place, category, description, address,online,adminID);
-		service.createEvent(event);
-		return "success...";
+	public Response createRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID,@PathParam("date") String date, String message) {
+
+		try {
+			service.joinRequestToAnEvent(new EventRequest(senderID,eventID,message,date));
+			return Response.ok().header("Access-Control-Allow-Origin", "*")
+					.build();
+		} catch (Exception ex) {
+			return Response.serverError().build();
+		}
+
 	}
 	
 	@DELETE
-	@Path("/delete/{id}")
+	@Path("/delete/{senderID}/{eventID}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String deleteEvent(@PathParam("id") String id) {
-		service.deleteEvent(id);
-		return "success...";
+	public Response deleteRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID) {
+		try {
+			service.cancelARequest(senderID, eventID);
+			return Response.ok().header("Access-Control-Allow-Origin", "*")
+					.build();
+		} catch (Exception ex) {
+			return Response.serverError().build();
+		}
 	}
-	
-	@PUT
-	@Path("/update")
+
+	@POST
+	@Path("/answer/{senderID}/{eventID}/{answer}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String updateEvent(@QueryParam("ID") String id,@QueryParam("name")String name, @QueryParam("date") Date date,@QueryParam("expireDate") Date expireDate,@QueryParam("place") String place,@QueryParam("category") String category,@QueryParam("description") String description,@QueryParam("address") String address, @QueryParam("online") boolean online,@QueryParam("admin") String adminID) {
-		Event event=new Event(id, name, date, expireDate, place, category, description, address,online,adminID);
-		service.updateEvent(event);
-		return "success...";
+	public Response answerRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID,@PathParam("answer") int answer) {
+
+		try {
+			service.answerARequest(senderID,eventID,(answer==1));
+			return Response.ok().header("Access-Control-Allow-Origin", "*")
+					.build();
+		} catch (Exception ex) {
+			return Response.serverError().build();
+		}
+
 	}
 	
 	

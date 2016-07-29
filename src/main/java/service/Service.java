@@ -53,21 +53,15 @@ public interface Service {
 	
 	public List<Like> getLikersOfEvent(String eventID);
 
-	public boolean joinRequestToAnEvent(String id, String eventId);
+	public void joinRequestToAnEvent(EventRequest request);
 	
-	public boolean answerARequest(String id,String eventId,boolean answer);
+	public void answerARequest(String id,String eventId,boolean answer);
 	
 	public void cancelARequest(String id, String eventId);
 	
-	public boolean quitFromAnEvent(String id, String eventId);
-	
-	
-	
-	public List<EventRequest> getRequestsByUserId(String id);
-	
+	public void quitFromAnEvent(String id, String eventId);
 	
 
-	public List<Event> getEvents();
 	
 	public List<Event> getEventsByCategory(String category);
 

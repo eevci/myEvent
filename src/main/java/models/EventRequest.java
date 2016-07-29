@@ -19,13 +19,15 @@ public class EventRequest {
 	private String eventID;
 	
 	private String message;
-	
+
+	private String date;
 	
 	public EventRequest(){}
-	public EventRequest(String senderID, String eventID, String message){
+	public EventRequest(String senderID, String eventID, String message, String date){
 		this.senderID=senderID;
 		this.eventID=eventID;
 		this.message=message;
+		this.date=date;
 	}
 	
 	public String getSender() {
@@ -50,6 +52,14 @@ public class EventRequest {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
 }
