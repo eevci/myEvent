@@ -38,6 +38,53 @@ CREATE ROLE test_admin LOGIN
   VERSION "1.0";
 
 
+-- Table: eventuser
+
+-- DROP TABLE eventuser;
+
+CREATE TABLE eventuser
+(
+  id character varying(255) NOT NULL,
+  age integer NOT NULL,
+  email character varying(255),
+  name character varying(255),
+  password character varying(255),
+  scope integer NOT NULL,
+  surname character varying(255),
+  university character varying(255),
+  pic_url character varying,
+  CONSTRAINT eventuser_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE eventuser
+  OWNER TO test_admin;
+  
+-- Table: event
+
+-- DROP TABLE event;
+
+CREATE TABLE event
+(
+  id character varying(255) NOT NULL,
+  address character varying(255),
+  adminid character varying(255) NOT NULL,
+  category character varying(255) NOT NULL,
+  date timestamp without time zone,
+  description character varying(255),
+  expiredate timestamp without time zone,
+  name character varying(255) NOT NULL,
+  online boolean NOT NULL,
+  place character varying(255),
+  CONSTRAINT event_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE event
+  OWNER TO test_admin;
+
 -- Table: adminuser
 
 -- DROP TABLE adminuser;
@@ -217,29 +264,6 @@ WITH (
 ALTER TABLE category_watch
   OWNER TO test_admin;
 
--- Table: event
-
--- DROP TABLE event;
-
-CREATE TABLE event
-(
-  id character varying(255) NOT NULL,
-  address character varying(255),
-  adminid character varying(255) NOT NULL,
-  category character varying(255) NOT NULL,
-  date timestamp without time zone,
-  description character varying(255),
-  expiredate timestamp without time zone,
-  name character varying(255) NOT NULL,
-  online boolean NOT NULL,
-  place character varying(255),
-  CONSTRAINT event_pkey PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE event
-  OWNER TO test_admin;
 
 -- Table: event_badges
 
@@ -286,6 +310,7 @@ WITH (
 ALTER TABLE event_comment
   OWNER TO test_admin;
 
+
 -- Table: event_like
 
 -- DROP TABLE event_like;
@@ -308,21 +333,25 @@ WITH (
 ALTER TABLE event_like
   OWNER TO test_admin;
 
+
 -- Table: event_members
 
 -- DROP TABLE event_members;
 
 CREATE TABLE event_members
 (
-  event_id character varying NOT NULL,
-  user_id character varying NOT NULL,
-  CONSTRAINT event_members_pkey PRIMARY KEY (event_id, user_id),
-  CONSTRAINT event_members_event_id_fkey FOREIGN KEY (event_id)
+  eventid character varying NOT NULL,
+  senderid character varying NOT NULL,
+  date character varying(50),
+  membershipid character varying NOT NULL,
+  CONSTRAINT event_members_pkey PRIMARY KEY (eventid, senderid),
+  CONSTRAINT event_members_event_id_fkey FOREIGN KEY (eventid)
       REFERENCES event (id) MATCH SIMPLE
       ON UPDATE CASCADE ON DELETE CASCADE,
-  CONSTRAINT event_members_user_id_fkey FOREIGN KEY (user_id)
+  CONSTRAINT event_members_user_id_fkey FOREIGN KEY (senderid)
       REFERENCES eventuser (id) MATCH SIMPLE
-      ON UPDATE CASCADE ON DELETE CASCADE
+      ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT event_members_membershipid_key UNIQUE (membershipid)
 )
 WITH (
   OIDS=FALSE
@@ -330,24 +359,24 @@ WITH (
 ALTER TABLE event_members
   OWNER TO test_admin;
 
+
 -- Table: eventrequest
 
 -- DROP TABLE eventrequest;
 
 CREATE TABLE eventrequest
 (
-  "senderID" character varying(255) NOT NULL,
-  "eventID" character varying(255) NOT NULL,
-  message character varying(255),
   eventid character varying(255) NOT NULL,
   senderid character varying(255) NOT NULL,
-  CONSTRAINT eventrequest_pkey PRIMARY KEY ("senderID", "eventID"),
-  CONSTRAINT "eventrequest_eventID_fkey" FOREIGN KEY ("eventID")
+  message character varying(500),
+  date character varying(255),
+  CONSTRAINT eventrequest_pkey PRIMARY KEY (eventid, senderid),
+  CONSTRAINT eventrequest_eventid_fkey FOREIGN KEY (eventid)
       REFERENCES event (id) MATCH SIMPLE
-      ON UPDATE CASCADE ON DELETE CASCADE,
-  CONSTRAINT "eventrequest_senderID_fkey" FOREIGN KEY ("senderID")
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT eventrequest_senderid_fkey FOREIGN KEY (senderid)
       REFERENCES eventuser (id) MATCH SIMPLE
-      ON UPDATE CASCADE ON DELETE CASCADE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
   OIDS=FALSE
@@ -355,28 +384,8 @@ WITH (
 ALTER TABLE eventrequest
   OWNER TO test_admin;
 
--- Table: eventuser
 
--- DROP TABLE eventuser;
 
-CREATE TABLE eventuser
-(
-  id character varying(255) NOT NULL,
-  age integer NOT NULL,
-  email character varying(255),
-  name character varying(255),
-  password character varying(255),
-  scope integer NOT NULL,
-  surname character varying(255),
-  university character varying(255),
-  pic_url character varying,
-  CONSTRAINT eventuser_pkey PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE eventuser
-  OWNER TO test_admin;
 
 
 -- Sequence: event_badges_badge_id_seq
