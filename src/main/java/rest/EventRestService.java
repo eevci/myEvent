@@ -100,7 +100,7 @@ public class EventRestService {
 	@POST
 	@Path("/add")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response createEvent(@QueryParam("ID") String id,@QueryParam("name")String name, @QueryParam("date") Date date,@QueryParam("expireDate") Date expireDate,@QueryParam("place") String place,@QueryParam("category") String category,@QueryParam("description") String description,@QueryParam("address") String address, @QueryParam("online") boolean online,@QueryParam("admin") String adminID) {
+	public Response createEvent(@QueryParam("ID") String id,@QueryParam("name")String name, @QueryParam("date") Date date,@QueryParam("expireDate") Date expireDate,@QueryParam("place") String place,@QueryParam("category") String category,@QueryParam("description") String description,@QueryParam("address") String address, @QueryParam("online") boolean online,@QueryParam("admin") String adminID ) {
 		Event event=new Event(id, name, date, expireDate, place, category, description, address,online,adminID);
 		service.createEvent(event);
 		return Response.ok().header("Access-Control-Allow-Origin", "*")
@@ -124,6 +124,26 @@ public class EventRestService {
 		service.updateEvent(event);
 		return Response.ok().header("Access-Control-Allow-Origin", "*")
 				.build();
+	}
+	@GET
+	@Path("/like/{eventID}")
+	public Response getLikersOfAnEvent(@PathParam("eventID") String eventID){
+
+		try {
+			JSONArray main = new JSONArray();
+			List<Like> likeList=service.getLikersOfEvent(eventID);
+			for(Like like : likeList){
+				JSONObject jo = new JSONObject();
+				jo.accumulate("id", like.getSenderID());
+				main.put(jo);
+			}
+			return Response.ok(main).header("Access-Control-Allow-Origin", "*")
+					.build();
+		} catch (JSONException ex) {
+
+		}
+		return Response.serverError().build();
+
 	}
 	@POST
 	@Path("/like/{eventID}/{userID}")

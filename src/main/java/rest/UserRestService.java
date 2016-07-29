@@ -106,6 +106,7 @@ public class UserRestService {
 			EventUser person=new EventUser(id, name, surname, email, digestedPass, age, university, scope);
 			service.addPerson(person);
 			if(type==1) service.addAdmin(id);
+
 			return Response.status(200).entity("success").build();
 		}
 		catch(Exception ex){

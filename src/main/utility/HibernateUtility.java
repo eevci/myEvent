@@ -34,7 +34,7 @@ public class HibernateUtility {
 			session.beginTransaction();
 			session.save(obj);
 			session.getTransaction().commit();
-			
+			return "success...";
 			}
 		catch(Exception e){
 			return e.getMessage();
@@ -45,20 +45,20 @@ public class HibernateUtility {
 	            
 	        }
 		}
-		return "success...";
+
 	}
 	
-	public Object get(Class<?> type, Serializable id) {
+	public <T> List<T> get(Class<?> type, Serializable id,String columnName) {
 		
 		Session session=null;
-		
+
 		try{
 			session=createSession();
-			Query query = session.createQuery("from "+type.getName()+" where id = :id ");
-			query.setParameter("id", id);
+			Query query = session.createQuery("from "+type.getName()+" where "+ columnName +" = :"+columnName+" ");
+			query.setParameter(columnName, id);
 			List resultSet=query.list();
 			session.close();
-			return resultSet.get(0);
+			return resultSet;
 		}
 		catch(Exception e){
 			System.err.print(e);

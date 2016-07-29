@@ -51,7 +51,7 @@ public interface Service {
 	
 	public void likeAnEvent(Like like);
 	
-	public List<EventUser> getLikersOfEvent(String eventID);
+	public List<Like> getLikersOfEvent(String eventID);
 
 	public boolean joinRequestToAnEvent(String id, String eventId);
 	

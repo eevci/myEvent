@@ -33,4 +33,17 @@ public class Like {
 		this.eventID=eventID;
 		
 	}
+	public String getSenderID(){
+		return this.senderID;
+	}
+	public String getEventID(){
+		return this.eventID;
+	}
+	public void setSenderID(String senderID){
+		this.senderID=senderID;
+	}
+	public void setEventID(String eventID){
+		this.eventID=eventID;
+	}
+
 }

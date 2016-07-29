@@ -38,7 +38,7 @@ public class ServiceImpl implements Service{
 		hibernateUtility.addAdmin(id);
 	}
 	public EventUser getPerson(String id){
-		return (EventUser) hibernateUtility.get(EventUser.class, id);
+		return (EventUser) hibernateUtility.get(EventUser.class, id,"id").get(0);
 	}
 	public boolean checkAdmin(String id){
 		return hibernateUtility.checkAdmin(id);	
@@ -62,7 +62,7 @@ public class ServiceImpl implements Service{
 		hibernateUtility.save(event);
 	}
 	public Event getEvent(String id){
-		return (Event) hibernateUtility.get(Event.class, id);
+		return (Event) hibernateUtility.get(Event.class, id,"id").get(0);
 	}
 	public List<Event> getAllEvents(){
 		return hibernateUtility.get(Event.class);
@@ -162,9 +162,8 @@ public class ServiceImpl implements Service{
 
 
 	@Override
-	public List<EventUser> getLikersOfEvent(String eventID) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Like> getLikersOfEvent(String eventID) {
+		return hibernateUtility.get(Like.class,eventID,"eventID");
 	}
 	
 }
