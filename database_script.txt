@@ -1,9 +1,9 @@
--- Database: test
+-- Database: myEvent
 
--- DROP DATABASE test;
+-- DROP DATABASE myEvent;
 
-CREATE DATABASE test
-  WITH OWNER = test_admin
+CREATE DATABASE myEvent
+  WITH OWNER = myEvent_admin
        ENCODING = 'UTF8'
        TABLESPACE = pg_default
        LC_COLLATE = 'en_US.UTF-8'
@@ -21,11 +21,11 @@ CREATE ROLE postgres LOGIN
   SUPERUSER INHERIT CREATEDB CREATEROLE REPLICATION;
 
 
--- Role: test_admin
+-- Role: myEvent_admin
 
--- DROP ROLE test_admin;
+-- DROP ROLE myEvent_admin;
 
-CREATE ROLE test_admin LOGIN
+CREATE ROLE myEvent_admin LOGIN
   ENCRYPTED PASSWORD 'md542bd12e9350f09364984c2331ef1b634'
   SUPERUSER INHERIT CREATEDB CREATEROLE NOREPLICATION;
 
@@ -59,7 +59,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE eventuser
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
   
 -- Table: event
 
@@ -83,7 +83,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE event
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: adminuser
 
@@ -101,7 +101,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE adminuser
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category
 
@@ -118,7 +118,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_card
 
@@ -136,7 +136,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_card
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_drink
 
@@ -154,7 +154,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_drink
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_music
 
@@ -172,7 +172,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_music
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_party
 
@@ -190,7 +190,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_party
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_sclubs
 
@@ -208,7 +208,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_sclubs
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_sports
 
@@ -226,7 +226,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_sports
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_vacation
 
@@ -244,7 +244,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_vacation
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: category_watch
 
@@ -262,7 +262,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE category_watch
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 
 -- Table: event_badges
@@ -285,7 +285,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE event_badges
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 -- Table: event_comment
 
@@ -308,7 +308,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE event_comment
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 
 -- Table: event_like
@@ -331,7 +331,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE event_like
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 
 -- Table: event_members
@@ -357,7 +357,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE event_members
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 
 -- Table: eventrequest
@@ -382,7 +382,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE eventrequest
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 
 
@@ -399,7 +399,7 @@ CREATE SEQUENCE event_badges_badge_id_seq
   START 1
   CACHE 1;
 ALTER TABLE event_badges_badge_id_seq
-  OWNER TO test_admin;
+  OWNER TO myEvent_admin;
 
 
 
