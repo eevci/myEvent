@@ -152,8 +152,8 @@ public class UserRestService {
 		try{
 			
 			EventUser person=service.getPerson(id);
-			
-			
+
+
 			String digestedPass = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
 			System.out.println(person.getPassword());
 			System.out.println(digestedPass);

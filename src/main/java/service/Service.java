@@ -30,8 +30,8 @@ public interface Service {
 	public void updatePerson(EventUser person); 
 	
 	public boolean checkAdmin(String id);
-	
-	
+
+	public String authenticateUser(String id, String password);
 	
 	
 	public void createEvent(Event event);
