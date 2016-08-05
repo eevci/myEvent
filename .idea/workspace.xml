@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f5cb5d-9c79-4b57-a5a1-82545e206181" name="Default" comment="initial">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/login/login_background.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/login/home_page.css" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/main/java/models/Badge.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/main/java/models/ChatMessage.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/main/java/models/Event.class" afterPath="" />
@@ -25,68 +23,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/models/Like.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/websocket/ChatEndpoint.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/websocket/ChatSessionHandler.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/Badge.java" afterPath="$PROJECT_DIR$/src/main/java/models/eventmodels/Badge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/ChatMessage.java" afterPath="$PROJECT_DIR$/src/main/java/models/eventmodels/ChatMessage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/Event.java" afterPath="$PROJECT_DIR$/src/main/java/models/eventmodels/Event.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/EventMembership.java" afterPath="$PROJECT_DIR$/src/main/java/models/eventmodels/EventMembership.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/EventRequest.java" afterPath="$PROJECT_DIR$/src/main/java/models/eventmodels/EventRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/EventUser.java" afterPath="$PROJECT_DIR$/src/main/java/models/eventmodels/EventUser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/Like.java" afterPath="$PROJECT_DIR$/src/main/java/models/eventmodels/Like.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/websocket/SessionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/service/session/SessionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/rest/EventRestService.class" afterPath="$PROJECT_DIR$/target/classes/main/java/rest/EventRestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/rest/RequestRestService.class" afterPath="$PROJECT_DIR$/target/classes/main/java/rest/RequestRestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/rest/UserRestService.class" afterPath="$PROJECT_DIR$/target/classes/main/java/rest/UserRestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/service/Service.class" afterPath="$PROJECT_DIR$/target/classes/main/java/service/Service.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/main/java/service/ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/websocket/chatServer/ChatEndpoint.class" afterPath="$PROJECT_DIR$/target/classes/main/java/websocket/chatServer/ChatEndpoint.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/websocket/chatServer/ChatSessionHandler.class" afterPath="$PROJECT_DIR$/target/classes/main/java/websocket/chatServer/ChatSessionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/utility/ChatServerUtilities/ChatMessageDecoder.class" afterPath="$PROJECT_DIR$/target/classes/main/utility/ChatServerUtilities/ChatMessageDecoder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/utility/ChatServerUtilities/ChatMessageEncoder.class" afterPath="$PROJECT_DIR$/target/classes/main/utility/ChatServerUtilities/ChatMessageEncoder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/utility/HibernateUtility.class" afterPath="$PROJECT_DIR$/target/classes/main/utility/HibernateUtility.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent.war" afterPath="$PROJECT_DIR$/target/myEvent.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/EventRestService.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/EventRestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/RequestRestService.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/RequestRestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/UserRestService.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/rest/UserRestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/Service.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/Service.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/service/ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/websocket/chatServer/ChatEndpoint.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/websocket/chatServer/ChatEndpoint.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/websocket/chatServer/ChatSessionHandler.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/java/websocket/chatServer/ChatSessionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/ChatServerUtilities/ChatMessageDecoder.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/ChatServerUtilities/ChatMessageDecoder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/ChatServerUtilities/ChatMessageEncoder.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/ChatServerUtilities/ChatMessageEncoder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/HibernateUtility.class" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/main/utility/HibernateUtility.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/myEvent_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/myEvent_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_jsr250_api_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_jsr250_api_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_json_1_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_json_1_0_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_interceptor_jboss_interceptor_api_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_interceptor_jboss_interceptor_api_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Services.txt" afterPath="$PROJECT_DIR$/Services.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myEvent.iml" afterPath="$PROJECT_DIR$/myEvent.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/EventRestService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/EventRestService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/RequestRestService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/RequestRestService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/UserRestService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/UserRestService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/Service.java" afterPath="$PROJECT_DIR$/src/main/java/service/Service.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/service/ServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/websocket/chatServer/ChatEndpoint.java" afterPath="$PROJECT_DIR$/src/main/java/websocket/chatServer/ChatEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/websocket/chatServer/ChatSessionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/websocket/chatServer/ChatSessionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/myEvent.properties" afterPath="$PROJECT_DIR$/src/main/resources/myEvent.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/utility/ChatServerUtilities/ChatMessageDecoder.java" afterPath="$PROJECT_DIR$/src/main/utility/ChatServerUtilities/ChatMessageDecoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/utility/ChatServerUtilities/ChatMessageEncoder.java" afterPath="$PROJECT_DIR$/src/main/utility/ChatServerUtilities/ChatMessageEncoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/utility/HibernateUtility.java" afterPath="$PROJECT_DIR$/src/main/utility/HibernateUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/utility/myEventConstants.java" afterPath="$PROJECT_DIR$/src/main/utility/myEventConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/myEvent/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/myEvent/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/myEvent/index.jsp" afterPath="$PROJECT_DIR$/target/myEvent/index.jsp" />
     </list>
     <ignored path="myEvent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -172,11 +109,44 @@
       <file leaf-file-name="UserRestService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/rest/UserRestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+            <state relative-caret-position="203">
+              <caret line="200" column="69" selection-start-line="200" selection-start-column="69" selection-end-line="200" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myEventConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/utility/myEventConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+              <folding>
+                <element signature="e#1368#1369#0" expanded="true" />
+                <element signature="e#1411#1412#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myEvent.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/myEvent.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventRestService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rest/EventRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3233">
+              <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -247,8 +217,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/models/eventmodels/EventUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/securitymodels/Token.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rest/UserRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/session/AuthanticationHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rest/UserRestService.java" />
       </list>
     </option>
   </component>
@@ -444,6 +414,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1252,12 +1226,12 @@
       <workItem from="1470118838098" duration="15725000" />
       <workItem from="1470205514612" duration="17067000" />
       <workItem from="1470395138632" duration="31000" />
-      <workItem from="1470395187514" duration="10380000" />
+      <workItem from="1470395187514" duration="12134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68395000" />
+    <option name="totallyTimeSpent" value="70149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="25" width="1223" height="1000" extended-state="0" />
@@ -1508,13 +1482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/myEvent.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/chat.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/utility/ChatServerUtilities/ChatMessageDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1662,14 +1629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/EventRestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="269" column="9" selection-start-line="269" selection-start-column="9" selection-end-line="269" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1698,14 +1657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/utility/myEventConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1748,10 +1699,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/EventRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3233">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/myEvent.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utility/myEventConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <element signature="e#1368#1369#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rest/UserRestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+        <state relative-caret-position="203">
+          <caret line="200" column="69" selection-start-line="200" selection-start-column="69" selection-end-line="200" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

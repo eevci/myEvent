@@ -193,11 +193,12 @@ public class UserRestService {
 	public Response login(@QueryParam("ID") String id,@QueryParam("password") String pass,@Context HttpServletRequest request){
 		try{
 
-
+			myEventConstants consts=new myEventConstants();
 			EventUser person=service.getPerson(id);
 
-			NewCookie tcookie=new NewCookie("TOKEN",(new Token(person,request.getSession().getId())).getTokenValue());
-			NewCookie idcookie=new NewCookie("username",id);
+			NewCookie tcookie=new NewCookie("TOKEN",(new Token(person,request.getSession().getId())).getTokenValue(),"/myEvent/","localhost",1,"",12*60*60,false);
+
+			NewCookie idcookie=new NewCookie("username",id,"/myEvent/","localhost",1,"",12*60*60,false);
 			String digestedPass = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
 
 			if(digestedPass.equals(person.getPassword())){
@@ -219,6 +220,7 @@ public class UserRestService {
 			return Response.status(200).entity(ex).build();
 		}
 	}
+
 	
 	
 }
