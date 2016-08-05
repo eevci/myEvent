@@ -3,7 +3,7 @@ package main.utility.ChatServerUtilities;
 /**
  *  author enver
  */
-import main.java.models.ChatMessage;
+import main.java.models.eventmodels.ChatMessage;
 
 import javax.json.Json;
 import javax.websocket.EncodeException;

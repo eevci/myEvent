@@ -1,18 +1,17 @@
 package main.java.rest;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 
-import java.sql.Date;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -20,9 +19,7 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
-import main.java.models.Event;
-import main.java.models.EventRequest;
-import main.java.models.EventUser;
+import main.java.models.eventmodels.EventRequest;
 import main.java.service.Service;
 import main.java.service.ServiceImpl;
 
@@ -45,7 +42,7 @@ public class RequestRestService {
 	@GET
 	@Path("/getreq/{userID}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getRequestByUserID(@PathParam("userID") String id){
+	public Response getRequestByUserID(@PathParam("userID") String id,@Context HttpServletRequest request){
 		try {
 			List<EventRequest> requestlist = service.getRequestByUserID(id);
 			JSONArray main = new JSONArray();
@@ -71,7 +68,7 @@ public class RequestRestService {
 	@GET
 	@Path("/get/{eventID}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getRequestByEventID(@PathParam("eventID") String id){
+	public Response getRequestByEventID(@PathParam("eventID") String id,@Context HttpServletRequest request){
 		try {
 			List<EventRequest> requestlist = service.getRequestByEventID(id);
 			JSONArray main = new JSONArray();
@@ -99,7 +96,7 @@ public class RequestRestService {
 	@Path("/add/{senderID}/{eventID}/{date}")
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response createRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID,@PathParam("date") String date, String message) {
+	public Response createRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID,@PathParam("date") String date, String message,@Context HttpServletRequest request) {
 
 		try {
 			service.joinRequestToAnEvent(new EventRequest(senderID,eventID,message,date));
@@ -114,7 +111,7 @@ public class RequestRestService {
 	@DELETE
 	@Path("/delete/{senderID}/{eventID}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response deleteRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID) {
+	public Response deleteRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID,@Context HttpServletRequest request) {
 		try {
 			service.cancelARequest(senderID, eventID);
 			return Response.ok().header("Access-Control-Allow-Origin", "*")
@@ -127,7 +124,7 @@ public class RequestRestService {
 	@POST
 	@Path("/answer/{senderID}/{eventID}/{answer}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response answerRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID,@PathParam("answer") int answer) {
+	public Response answerRequest(@PathParam("senderID") String senderID,@PathParam("eventID") String eventID,@PathParam("answer") int answer,@Context HttpServletRequest request) {
 
 		try {
 			service.answerARequest(senderID,eventID,(answer==1));

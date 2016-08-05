@@ -12,12 +12,12 @@
   	
 	<property name="show_sql">true</property>
 	 <property name="hibernate.hbm2ddl.auto">update</property>
-   <mapping class="main.java.models.EventUser"></mapping>
-   <mapping class="main.java.models.Event"></mapping>
-   <mapping class="main.java.models.EventRequest"></mapping>
-       <mapping class="main.java.models.EventMembership"></mapping>
-   <mapping class="main.java.models.Badge"></mapping>
-   <mapping class="main.java.models.Like"></mapping>
+   <mapping class="main.java.models.eventmodels.EventUser"></mapping>
+   <mapping class="main.java.models.eventmodels.Event"></mapping>
+   <mapping class="main.java.models.eventmodels.EventRequest"></mapping>
+       <mapping class="main.java.models.eventmodels.EventMembership"></mapping>
+   <mapping class="main.java.models.eventmodels.Badge"></mapping>
+   <mapping class="main.java.models.eventmodels.Like"></mapping>
    
 </session-factory>
 </hibernate-configuration>

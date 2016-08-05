@@ -4,8 +4,7 @@ package main.java.service;
 
 import java.util.List;
 
-import main.java.models.*;
-import org.json.*;
+import main.java.models.eventmodels.*;
 
 /**
 *
@@ -31,7 +30,7 @@ public interface Service {
 	
 	public boolean checkAdmin(String id);
 
-	public String authenticateUser(String id, String password);
+
 	
 	
 	public void createEvent(Event event);

@@ -6,8 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import main.java.models.*;
-import org.json.JSONObject;
+import main.java.models.eventmodels.*;
 
 import main.utility.HibernateUtility;
 

@@ -1,5 +1,7 @@
 package main.java.rest;
 
+
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 
 import javax.ws.rs.POST;
@@ -9,19 +11,19 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
-import java.security.MessageDigest;
 import java.util.List;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.*;
 
+import main.java.models.securitymodels.Token;
+import main.java.service.session.AuthanticationHandler;
+import main.utility.myEventConstants;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
-import main.java.models.EventUser;
+import main.java.models.eventmodels.EventUser;
 import main.java.service.Service;
 import main.java.service.ServiceImpl;
 
@@ -34,6 +36,7 @@ import main.java.service.ServiceImpl;
 public class UserRestService {
 	
 	Service service = new ServiceImpl().getInstance();
+	AuthanticationHandler authHandler= AuthanticationHandler.getInstance();
 
 	@GET
 	@Path("/test")
@@ -43,25 +46,30 @@ public class UserRestService {
 	@GET
 	@Path("/get/{ID}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getPerson(@PathParam("ID") String id){
+	public Response getPerson(@PathParam("ID") String id,@Context HttpServletRequest request){
 		try {
-			
-			
-			JSONObject jo = new JSONObject();
-			EventUser user = service.getPerson(id);
-			if(!(user==null)){
-				jo.accumulate("id", user.getUsername());
-				jo.accumulate("name", user.getName());
-				jo.accumulate("surname", user.getSurname());
-				jo.accumulate("age", user.getAge());
-				jo.accumulate("email", user.getEmail());
-				jo.accumulate("university", user.getUniversity());
-				jo.accumulate("scope", user.getScope());
+
+			if(authHandler.isAuthorized(request,"ALL")) {
+				JSONObject jo = new JSONObject();
+				EventUser user = service.getPerson(id);
+				if (!(user == null)) {
+					jo.accumulate("id", user.getUsername());
+					jo.accumulate("name", user.getName());
+					jo.accumulate("surname", user.getSurname());
+					jo.accumulate("age", user.getAge());
+					jo.accumulate("email", user.getEmail());
+					jo.accumulate("university", user.getUniversity());
+					jo.accumulate("scope", user.getScope());
+					jo.accumulate("role", user.getRole());
+				}
+
+
+				return Response.ok(jo).header("Access-Control-Allow-Origin", "*")
+						.build();
 			}
-			
-			
-			return Response.ok(jo).header("Access-Control-Allow-Origin", "*")
-				.build();
+
+			return Response.status(401).entity("No authorization").build();
+
 		} catch (JSONException ex) {
 			
 		}
@@ -71,43 +79,49 @@ public class UserRestService {
 	@GET
 	@Path("/get")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response listPerson(){
+	public Response listPerson(@Context HttpServletRequest request){
 		try {
-			JSONArray main = new JSONArray();
-			List <EventUser> users = service.getAllPeople();
-			for(EventUser user : users){
-				
-				JSONObject jo = new JSONObject();
-				jo.accumulate("id", user.getUsername());
-				jo.accumulate("name", user.getName());
-				jo.accumulate("surname", user.getSurname());
-				jo.accumulate("age", user.getAge());
-				jo.accumulate("email", user.getEmail());
-				jo.accumulate("university", user.getUniversity());
-				jo.accumulate("scope", user.getScope());
-				
-				main.put(jo);
+			if(authHandler.isAuthorized(request,"ALL_USER")) {
+				JSONArray main = new JSONArray();
+				List<EventUser> users = service.getAllPeople();
+				for (EventUser user : users) {
+
+					JSONObject jo = new JSONObject();
+					jo.accumulate("id", user.getUsername());
+					jo.accumulate("name", user.getName());
+					jo.accumulate("surname", user.getSurname());
+					jo.accumulate("age", user.getAge());
+					jo.accumulate("email", user.getEmail());
+					jo.accumulate("university", user.getUniversity());
+					jo.accumulate("scope", user.getScope());
+
+					main.put(jo);
+				}
+				return Response.ok(main).header("Access-Control-Allow-Origin", "*")
+						.build();
 			}
-			return Response.ok(main).header("Access-Control-Allow-Origin", "*")
-				.build();
+			return Response.status(401).entity("No authorization").build();
 		} catch (JSONException ex) {
-			
+			return Response.serverError().build();
 		}
-		return Response.serverError().build();
+
 	}
 	
 	@POST
 	@Path("/add")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response addPerson(@QueryParam("ID") String id,@QueryParam("name")String name, @QueryParam("surname") String surname,@QueryParam("email") String email,@QueryParam("password") String password,@QueryParam("age") int age,@QueryParam("university") String university,@QueryParam("scope") int scope,@QueryParam("type") int type) {
+	public Response addPerson(@QueryParam("ID") String id,@QueryParam("name")String name, @QueryParam("surname") String surname,@QueryParam("email") String email,@QueryParam("password") String password,@QueryParam("age") int age,@QueryParam("university") String university,@QueryParam("scope") int scope,@QueryParam("type") myEventConstants.UserRole role,@Context HttpServletRequest request) {
 		
 		try{
-			String digestedPass = org.apache.commons.codec.digest.DigestUtils.sha256Hex(password);
-			EventUser person=new EventUser(id, name, surname, email, digestedPass, age, university, scope);
-			service.addPerson(person);
-			if(type==1) service.addAdmin(id);
+			if(authHandler.isAuthorized(request,"ALL")) {
+				String digestedPass = org.apache.commons.codec.digest.DigestUtils.sha256Hex(password);
+				EventUser person = new EventUser(id, name, surname, email, digestedPass, age, university, scope,role );
+				service.addPerson(person);
+				if (role == myEventConstants.UserRole.ADMIN || role==myEventConstants.UserRole.SUPERADMIN) service.addAdmin(id);
 
-			return Response.status(200).entity("success").build();
+				return Response.status(200).entity("success").build();
+			}
+			return Response.status(401).entity("No authorization").build();
 		}
 		catch(Exception ex){
 			return Response.serverError().build();
@@ -118,10 +132,24 @@ public class UserRestService {
 	@DELETE
 	@Path("/delete/{id}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response deletePerson(@PathParam("id") String id) {
+	public Response deletePerson(@PathParam("id") String id,@Context HttpServletRequest request) {
 		try{
-			service.deletePerson(id);
-			return Response.status(200).entity("success").build();
+			if(service.checkAdmin(id)){
+				if(authHandler.isAuthorized(request,"CRUD_ADMIN")){
+					service.deletePerson(id);
+					return Response.status(200).entity("success").build();
+				}
+			}
+			else{
+				if(authHandler.isAuthorized(request,"LIMITED_USER")){
+					service.deletePerson(id);
+					return Response.status(200).entity("success").build();
+				}
+
+			}
+			return Response.status(401).entity("No authorization").build();
+
+
 		}
 		catch(Exception ex){
 			return Response.serverError().build();
@@ -131,48 +159,64 @@ public class UserRestService {
 	@PUT
 	@Path("/update")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response updatePerson(@QueryParam("ID") String id,@QueryParam("name")String name, @QueryParam("surname") String surname,@QueryParam("email") String email,@QueryParam("password") String password,@QueryParam("age") int age,@QueryParam("university") String university,@QueryParam("scope") int scope) {
-		EventUser person=new EventUser(id, name, surname, email, password, age, university, scope);
-		
+	public Response updatePerson(@QueryParam("ID") String id, @QueryParam("name")String name, @QueryParam("surname") String surname, @QueryParam("email") String email, @QueryParam("password") String password, @QueryParam("age") int age, @QueryParam("university") String university, @QueryParam("scope") int scope, @QueryParam("type") myEventConstants.UserRole role, @Context HttpServletRequest request) {
+
+
+
+		EventUser person=new EventUser(id, name, surname, email, password, age, university, scope,role);
+
 		try{
-			service.updatePerson(person);
-			return Response.status(200).entity("success").build();
+			if(person.getRole()== myEventConstants.UserRole.ADMIN || person.getRole()== myEventConstants.UserRole.SUPERADMIN) {
+				if (!authHandler.isAuthorized(request, "ALL_USER")) {
+					service.updatePerson(person);
+					return Response.status(200).entity("success").build();
+				}
+			}
+			else{
+				if (!authHandler.isAuthorized(request, "LIMITED_USER")) {
+					service.updatePerson(person);
+					return Response.status(200).entity("success").build();
+				}
+			}
+			return Response.status(401).entity("No authorization").build();
 		}
 		catch(Exception ex){
 			return Response.serverError().build();
 		}
-		
+
 	}
 	
 	
 	@POST
 	@Path("/login")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response login(@QueryParam("ID") String id,@QueryParam("password") String pass){
+	public Response login(@QueryParam("ID") String id,@QueryParam("password") String pass,@Context HttpServletRequest request){
 		try{
-			
+
+
 			EventUser person=service.getPerson(id);
 
-
+			NewCookie tcookie=new NewCookie("TOKEN",(new Token(person,request.getSession().getId())).getTokenValue());
+			NewCookie idcookie=new NewCookie("username",id);
 			String digestedPass = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
-			System.out.println(person.getPassword());
-			System.out.println(digestedPass);
+
 			if(digestedPass.equals(person.getPassword())){
 				
-				if(service.checkAdmin(id)){ // if user is admin
-					return Response.status(200).entity("1").build();
+				if(person.getRole()== myEventConstants.UserRole.ADMIN || person.getRole()== myEventConstants.UserRole.SUPERADMIN){ // if user is admin
+					return Response.status(200).cookie(tcookie,idcookie).entity("1").build();
 				}
 				else{
-					return Response.status(200).entity("0").build();
+					return Response.status(200).cookie(tcookie,idcookie).entity("0").build();
 				}
 			}
 			else{ // if password is wrong
 				return Response.status(200).entity("e1").build();
 			}
-			
+
 		}
 		catch(Exception ex){
-			return Response.status(200).entity("e2").build();
+			ex.printStackTrace();
+			return Response.status(200).entity(ex).build();
 		}
 	}
 	

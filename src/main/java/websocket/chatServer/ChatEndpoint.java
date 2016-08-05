@@ -1,13 +1,10 @@
 package main.java.websocket.chatServer;
 
-import main.java.models.ChatMessage;
+import main.java.models.eventmodels.ChatMessage;
 import main.utility.ChatServerUtilities.ChatMessageDecoder;
 import main.utility.ChatServerUtilities.ChatMessageEncoder;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,7 +12,7 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-@ServerEndpoint(value = "/chat/{room}/", encoders = ChatMessageEncoder.class, decoders = ChatMessageDecoder.class)
+@ServerEndpoint(value = "/chat/{room}", encoders = ChatMessageEncoder.class, decoders = ChatMessageDecoder.class)
 public class ChatEndpoint {
     private final Logger log = Logger.getLogger(getClass().getName());
     private final ChatSessionHandler sessionHandler = new ChatSessionHandler();

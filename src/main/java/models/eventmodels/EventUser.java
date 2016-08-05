@@ -1,4 +1,4 @@
-package main.java.models;
+package main.java.models.eventmodels;
 
 import java.util.List;
 
@@ -6,12 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import main.utility.myEventConstants;
 import org.json.JSONObject;
 
 /**
 *
 * @author enver
 */
+
 
 @XmlRootElement
 @Entity
@@ -25,15 +27,15 @@ public class EventUser {
 	private String password;
 	private int age;
 	private String university;
-	
+
 	//TO-DO Profile Picture must be added
 	
-	
+	private myEventConstants.UserRole role;
 	private int scope;
 	//private List <Badge> badges;
 	
 	public EventUser(){}
-	public EventUser(String id,String name, String surname, String email,String password,int age, String university,int scope){
+	public EventUser(String id,String name, String surname, String email,String password,int age, String university,int scope,myEventConstants.UserRole role){
 		this.ID=id;
 		this.name=name;
 		this.surname=surname;
@@ -42,6 +44,7 @@ public class EventUser {
 		this.age=age;
 		this.university=university;
 		this.scope=scope;
+		this.role=role;
 	}
 	
 	
@@ -91,7 +94,9 @@ public class EventUser {
 		this.university = university;
 	}
 	
-	
+	public myEventConstants.UserRole getRole(){
+		return this.role;
+	}
 	
 	public int getScope() {
 		return scope;

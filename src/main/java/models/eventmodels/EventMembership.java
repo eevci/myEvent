@@ -1,4 +1,4 @@
-package main.java.models;
+package main.java.models.eventmodels;
 
 import main.java.CompositePKEY.EventMembership_PKEY;
 

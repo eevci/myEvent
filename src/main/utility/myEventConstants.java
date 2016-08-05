@@ -15,6 +15,12 @@ public class myEventConstants {
 
     private static Map<String, String> constantMap;
 
+    public enum UserRole {
+        SUPERADMIN,
+        ADMIN,
+        MEMBER,
+        ANONYMOUS
+    }
 
     public myEventConstants() throws IOException {
 
